@@ -65,15 +65,38 @@ __END__
 
 =head1 NAME
 
-WebService::Reactio - It's new $module
+WebService::Reactio - API client for Reactio
 
 =head1 SYNOPSIS
 
     use WebService::Reactio;
 
+    my $client = WebService::Reactio->new(
+        api_key      => '__API_KEY__',
+        organization => '__ORGANIZATION__',
+    );
+
+    my $incidents = $client->incidents;
+
 =head1 DESCRIPTION
 
-WebService::Reactio is ...
+WebService::Reactio is API client for Reactio (L<https://reactio.jp/>).
+
+=head1 METHODS
+
+=over 4
+
+=item my $client = WebService::Reactio->new(%args)
+
+=item $client->create_incident($name, [\%options]);
+
+=item $client->notify($incident_id, $notification_text, [\%options]);
+
+=item my $incident = $client->incident($incident_id);
+
+=item my $incidents = $client->incidents([\%options]);
+
+=back
 
 =head1 LICENSE
 
