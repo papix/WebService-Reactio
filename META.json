@@ -42,6 +42,9 @@
       },
       "runtime" : {
          "requires" : {
+            "Carp" : "0",
+            "Furl" : "0",
+            "JSON" : "0",
             "perl" : "5.008001"
          }
       },
@@ -52,5 +55,16 @@
       }
    },
    "release_status" : "unstable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://git@github.com/papix/WebService-Reactio/issues"
+      },
+      "homepage" : "https://git@github.com/papix/WebService-Reactio",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://git@github.com/papix/WebService-Reactio.git",
+         "web" : "https://git@github.com/papix/WebService-Reactio"
+      }
+   },
    "version" : "0.01"
 }
