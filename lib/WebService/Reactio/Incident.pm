@@ -29,7 +29,7 @@ sub incidents {
     $self->_request('GET', '/api/v1/incidents', $params);
 }
 
-sub notify {
+sub notify_incident {
     my ($self, $incident_id, $text, $options) = @_;
     Carp::croak '[ERROR] Incident id is required' unless $incident_id;
     Carp::croak '[ERROR] Notification text is required' unless $text;

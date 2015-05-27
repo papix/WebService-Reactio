@@ -94,14 +94,14 @@ subtest 'incidents()' => sub {
     };
 };
 
-subtest 'notify()' => sub {
+subtest 'notify_incident()' => sub {
     my $rct = WebService::Reactio->new( api_key => 'API_KEY', organization => 'ORGANIZATION' );
 
     subtest 'error' => sub {
-        eval { $rct->notify() };
+        eval { $rct->notify_incident() };
         ok $@, "Incident id and notification message doesn't exist";
 
-        eval { $rct->notify(1) };
+        eval { $rct->notify_incident(1) };
         ok $@, "Notification message doesn't exist";
     };
 
@@ -110,7 +110,7 @@ subtest 'notify()' => sub {
         $Mock_furl->mock(request => sub { Furl::Response->new } );
         $Mock_furl_res->mock(content => sub { $data });
 
-        my $res = $rct->notify(1, "Webサーバで障害が発生しました。至急対応をお願い致します。", {
+        my $res = $rct->notify_incident(1, "Webサーバで障害が発生しました。至急対応をお願い致します。", {
             notification_call => JSON::true
         });
 
