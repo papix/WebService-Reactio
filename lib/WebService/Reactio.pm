@@ -79,15 +79,29 @@ WebService::Reactio is API client for Reactio (L<https://reactio.jp/>).
 
 =over 4
 
-=item my $client = WebService::Reactio->new(%args)
+=item new(%args)
 
-=item $client->create_incident($name, [\%options]);
+Create instance of WebService::Reactio.
+You must be specified C<api_key> and C<organization> in this method.
 
-=item $client->notify($incident_id, $notification_text, [\%options]);
+=item create_incident($name, [\%options]);
 
-=item my $incident = $client->incident($incident_id);
+Create incident.
+Incident name (C<$name>) is required.
 
-=item my $incidents = $client->incidents([\%options]);
+=item notify_incident($incident_id, $notification_text, [\%options]);
+
+Send notificate to specified incident.
+Incident id (C<$incident_id>) and notification text (C<$notification_text>) is required.
+
+=item incident($incident_id);
+
+Get incident details.
+Incident id (C<$incident_id>) is required.
+
+=item incidents([\%options]);
+
+Get incident list.
 
 =back
 
@@ -97,6 +111,10 @@ Copyright (C) papix.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
+
+=head1 SEE ALSO
+
+Reactio API Official Guide L<https://reactio.jp/development/api>
 
 =head1 AUTHOR
 
