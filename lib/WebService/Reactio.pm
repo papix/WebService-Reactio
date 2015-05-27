@@ -47,14 +47,7 @@ sub _request {
         ],
         content    => $content ? encode_json($content) : undef,
     );
-
-    Carp::croak '[ERROR] Authentication error' if $response->status == 401;
-    Carp::croak '[ERROR] Forbidden' if $response->status == 403;
-    Carp::croak '[ERROR] Not found' if $response->status == 404;
-    Carp::croak '[ERROR] Bad request' if $response->status =~ /^4/;
-    Carp::croak '[ERROR] Server error' if $response->status =~ /^5/;
-
-    return decode_json($response->{content});
+    return decode_json($response->content);
 }
 
 1;

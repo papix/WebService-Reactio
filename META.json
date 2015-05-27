@@ -4,7 +4,7 @@
       "papix <mail@papix.net>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v2.4.1, CPAN::Meta::Converter version 2.140640",
+   "generated_by" : "Minilla/v2.1.3, CPAN::Meta::Converter version 2.142690",
    "license" : [
       "perl_5"
    ],
@@ -50,6 +50,9 @@
       },
       "test" : {
          "requires" : {
+            "Furl::Response" : "0",
+            "Path::Class" : "0",
+            "Test::Mock::Furl" : "0",
             "Test::More" : "0.98"
          }
       }
@@ -57,13 +60,13 @@
    "release_status" : "unstable",
    "resources" : {
       "bugtracker" : {
-         "web" : "https://github.com/papix/WebService-Reactio/issues"
+         "web" : "https://git@github.com/papix/WebService-Reactio/issues"
       },
-      "homepage" : "https://github.com/papix/WebService-Reactio",
+      "homepage" : "https://git@github.com/papix/WebService-Reactio",
       "repository" : {
          "type" : "git",
-         "url" : "git://github.com/papix/WebService-Reactio.git",
-         "web" : "https://github.com/papix/WebService-Reactio"
+         "url" : "git://git@github.com/papix/WebService-Reactio.git",
+         "web" : "https://git@github.com/papix/WebService-Reactio"
       }
    },
    "version" : "0.01"
