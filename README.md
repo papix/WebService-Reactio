@@ -20,29 +20,76 @@ WebService::Reactio is API client for Reactio ([https://reactio.jp/](https://rea
 
 # METHODS
 
-- new(%args)
+## new(%params)
 
-    Create instance of WebService::Reactio.
-    You must be specified `api_key` and `organization` in this method.
+Create instance of WebService::Reactio.
 
-- create\_incident($name, \[\\%options\]);
+_%params_ must have following parameter:
 
-    Create incident.
-    Incident name (`$name`) is required.
+- api\_key
 
-- notify\_incident($incident\_id, $notification\_text, \[\\%options\]);
+    API key of Reactio.
+    You can get API key on project setting page.
 
-    Send notificate to specified incident.
-    Incident id (`$incident_id`) and notification text (`$notification_text`) is required.
+- organization
 
-- incident($incident\_id);
+    Organization ID of Reactio.
+    This is the same as the subdomain in your organization of Reactio.
+    If you can use Reactio in the subdomain called [https://your-organization.reactio.jp/](https://your-organization.reactio.jp/), your Organization ID is `your-organization`.
 
-    Get incident details.
-    Incident id (`$incident_id`) is required.
+_%params_ optional parameters are:
 
-- incidents(\[\\%options\]);
+- domain
 
-    Get incident list.
+    Domain of Reactio.
+    The default is `reactio.jp`.
+
+## create\_incident($name, \[\\%options\])
+
+Create new incident.
+
+You must have following parameter:
+
+- $name
+
+    Incident name.
+
+_%options_ is optional parameters.
+Please refer API official guide if you want to get details.
+
+## notify\_incident($incident\_id, $notification\_text, \[\\%options\])
+
+Send notificate to specified incident.
+
+You must have following parameter:
+
+- $incident\_id
+
+    Incident ID.
+
+- $notification\_text
+
+    Notification text.
+
+_%options_ is optional parameters.
+Please refer API official guide if you want to get details.
+
+## incident($incident\_id)
+
+Get incident details.
+
+You must have following parameter:
+
+- $incident\_id
+
+    Incident ID.
+
+## incidents(\[\\%options\])
+
+Get incident list.
+
+_%options_ is optional parameters.
+Please refer API official guide if you want to get details.
 
 # LICENSE
 

@@ -77,31 +77,98 @@ WebService::Reactio is API client for Reactio (L<https://reactio.jp/>).
 
 =head1 METHODS
 
-=over 4
-
-=item new(%args)
+=head2 new(%params)
 
 Create instance of WebService::Reactio.
-You must be specified C<api_key> and C<organization> in this method.
 
-=item create_incident($name, [\%options]);
+I<%params> must have following parameter:
 
-Create incident.
-Incident name (C<$name>) is required.
+=over 4
 
-=item notify_incident($incident_id, $notification_text, [\%options]);
+=item api_key
+
+API key of Reactio.
+You can get API key on project setting page.
+
+=item organization
+
+Organization ID of Reactio.
+This is the same as the subdomain in your organization of Reactio.
+If you can use Reactio in the subdomain called L<https://your-organization.reactio.jp/>, your Organization ID is C<your-organization>.
+
+=back
+
+I<%params> optional parameters are:
+
+=over 4
+
+=item domain
+
+Domain of Reactio.
+The default is C<reactio.jp>.
+
+=back
+
+=head2 create_incident($name, [\%options])
+
+Create new incident.
+
+You must have following parameter:
+
+=over 4
+
+=item $name
+
+Incident name.
+
+=back
+
+I<%options> is optional parameters.
+Please refer API official guide if you want to get details.
+
+=head2 notify_incident($incident_id, $notification_text, [\%options])
 
 Send notificate to specified incident.
-Incident id (C<$incident_id>) and notification text (C<$notification_text>) is required.
 
-=item incident($incident_id);
+You must have following parameter:
+
+=over 4
+
+=item $incident_id
+
+Incident ID.
+
+=item $notification_text
+
+Notification text.
+
+=back
+
+I<%options> is optional parameters.
+Please refer API official guide if you want to get details.
+
+=head2 incident($incident_id)
 
 Get incident details.
-Incident id (C<$incident_id>) is required.
 
-=item incidents([\%options]);
+You must have following parameter:
+
+=over 4
+
+=item $incident_id
+
+Incident ID.
+
+=back
+
+=head2 incidents([\%options])
 
 Get incident list.
+
+I<%options> is optional parameters.
+Please refer API official guide if you want to get details.
+
+=over 4
 
 =back
 
