@@ -45,6 +45,7 @@
             "Carp" : "0",
             "Furl" : "0",
             "JSON" : "0",
+            "parent" : "0",
             "perl" : "5.008001"
          }
       },
@@ -69,5 +70,8 @@
          "web" : "https://github.com/papix/WebService-Reactio"
       }
    },
-   "version" : "0.01"
+   "version" : "0.02",
+   "x_contributors" : [
+      "Syohei YOSHIDA <syohex@gmail.com>"
+   ]
 }

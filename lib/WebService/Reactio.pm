@@ -7,7 +7,7 @@ use Carp;
 use Furl;
 use JSON;
 
-our $VERSION = "0.01";
+our $VERSION = "0.02";
 
 use parent qw/
     WebService::Reactio::Incident
