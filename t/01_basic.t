@@ -118,4 +118,28 @@ subtest 'notify_incident()' => sub {
     };
 };
 
+subtest 'send_message()' => sub {
+    my $rct = WebService::Reactio->new( api_key => 'API_KEY', organization => 'ORGANIZATION' );
+
+    subtest 'error' => sub {
+        eval { $rct->notify_incident() };
+        ok $@, "Incident id and message doesn't exist";
+
+        eval { $rct->notify_incident(1) };
+        ok $@, "Message doesn't exist";
+    };
+
+    subtest 'success' => sub {
+        my $data = file('t/data/send_message.json')->slurp;
+        $Mock_furl->mock(request => sub { Furl::Response->new } );
+        $Mock_furl_res->mock(content => sub { $data });
+
+        my $res = $rct->notify_incident(1, "LoadAverageが50に上昇しました。", {
+            notification_call => JSON::true
+        });
+
+        is_deeply $res, decode_json($data);
+    };
+};
+
 done_testing;
