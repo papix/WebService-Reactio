@@ -91,6 +91,20 @@ Get incident list.
 _%options_ is optional parameters.
 Please refer API official guide if you want to get details.
 
+## send\_message($incident\_id, $text)
+
+Send message to specified incident's timeline.
+
+You must have following parameter:
+
+- $incident\_id
+
+    Incident ID.
+
+- $text
+
+    Timeline message.
+
 # LICENSE
 
 Copyright (C) papix.

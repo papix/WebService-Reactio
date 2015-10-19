@@ -172,6 +172,24 @@ Please refer API official guide if you want to get details.
 
 =back
 
+=head2 send_message($incident_id, $text)
+
+Send message to specified incident's timeline.
+
+You must have following parameter:
+
+=over 4
+
+=item $incident_id
+
+Incident ID.
+
+=item $text
+
+Timeline message.
+
+=back
+
 =head1 LICENSE
 
 Copyright (C) papix.
