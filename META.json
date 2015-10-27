@@ -4,7 +4,7 @@
       "papix <mail@papix.net>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v2.4.1, CPAN::Meta::Converter version 2.140640",
+   "generated_by" : "Minilla/v2.5.0, CPAN::Meta::Converter version 2.150005",
    "license" : [
       "perl_5"
    ],
@@ -70,8 +70,9 @@
          "web" : "https://github.com/papix/WebService-Reactio"
       }
    },
-   "version" : "0.02",
+   "version" : "0.03",
    "x_contributors" : [
       "Syohei YOSHIDA <syohex@gmail.com>"
-   ]
+   ],
+   "x_serialization_backend" : "JSON::PP version 2.27203"
 }
